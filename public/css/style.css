@@ -1,0 +1,20 @@
+/* .card {
+    margin-top: 20px;
+} */
+
+#card-1 {
+    margin-top: 30px;
+}
+
+#card-2 {
+    margin-top: 30px;
+}
+
+#map {
+    padding: 0px;
+}
+
+body {
+    background-image: url(../images/bokeh-candles-chairs-3038119.jpg);
+    background-size: cover;
+}
