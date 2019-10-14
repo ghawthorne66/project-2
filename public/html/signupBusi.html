@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Passport Authentication</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="row">
+                    <!--Create field for uploading an image-->
+                    <div class="col-sm-12">
+                        <h4><strong>regist business</strong></h4>
+                        <div class="form-group has-feedback">
+                                <label for="exampleInputBuinessName">Buiness Name</label>
+                                <input type="BuinessName" class="form-control" id="buinessName-input" placeholder="Buiness Name">
+                            </div> 
+                            <div class="form-group has-feedback">
+                                    <label for="exampleInputBuinessName">Address Location</label>
+                                    <input type="Location" class="form-control" id="Location-input" placeholder="Location Address">
+                                </div> 
+                        <div class="form-group has-feedback">
+                            <input type="file" id="inputFileToLoad" class="form-control" placeholder="photo" accept="image/*;capture=camera" name="userPhoto" single />
+                            <i class="glyphicon glyphicon-fire form-control-feedback"></i>
+                          
+                        </div>
+                        <!--Append the base64 value from the above field-->
+                        <div class="form-group has-feedback">
+                            <input type="text" id="response" class="form-control" placeholder="Base-64 value" />
+                            <i class="glyphicon glyphicon-globe form-control-feedback"></i>
+                        </div>
+                        <!--Create a button-->
+                        <button id="submit">Base 64 to Image</button>
+                        <!--Used to Display Decode Image-->
+                        <div class="container">
+                            <img id="preview" src="" class="img-responsive" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/signupBusi.js"></script>
+
+</body>
+
+</html>

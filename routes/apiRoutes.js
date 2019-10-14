@@ -15,12 +15,26 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
     db.User.create({
-      email: req.body.email,
-      password: req.body.password,
-      firstname: req.body.firstname,
+      businessName: req.body.businessName,
+      menu: req.body.menu,
+      location: req.body.location,
       lastname: req.body.lastname,
       username: req.body.username
     })
+      .then(function() {
+        res.redirect(307, "/api/login");
+      })
+      .catch(function(err) {
+        res.status(401).json(err);
+      });
+  });
+  app.post("/api/signupBusi", function(req, res) {
+    db.businessPG
+      .create({
+        businessName: req.body.businessName,
+        location: req.body.location,
+        menu: req.body.menu
+      })
       .then(function() {
         res.redirect(307, "/api/login");
       })
@@ -49,6 +63,22 @@ module.exports = function(app) {
         lastname: req.user.lastname,
         username: req.user.username,
         id: req.user.id
+      });
+    }
+  });
+  // Route for getting some data about our user to be used client side
+  app.get("/api/business_data", function(req, res) {
+    if (!req.businessPG) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        businessName: req.businessPG.businessName,
+        location: req.businessPG.location,
+        menu: req.businessPG.menu,
+        id: req.businessPG.id
       });
     }
   });
