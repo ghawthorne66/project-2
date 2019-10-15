@@ -6,7 +6,7 @@ $(document).ready(function() {
     //alert($("#response").val());
   });
 
-//Convert Image to Base64
+  //Convert Image to Base64
 
   $("#inputFileToLoad").change(function() {
     var filesSelected = document.getElementById("inputFileToLoad").files;
