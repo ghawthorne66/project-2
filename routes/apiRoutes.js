@@ -18,7 +18,8 @@ module.exports = function(app) {
       email: req.body.email,
       password: req.body.password,
       firstname: req.body.firstname,
-      lastname: req.body.lastname
+      lastname: req.body.lastname,
+      username: req.body.username
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -47,8 +48,10 @@ module.exports = function(app) {
         email: req.user.email,
         firstname: req.user.firstname,
         lastname: req.user.lastname,
+        username: req.user.username,
         id: req.user.id
       });
     }
   });
+  // Route for getting some data about our user to be used client side
 };

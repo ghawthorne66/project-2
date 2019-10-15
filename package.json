@@ -4,10 +4,11 @@
     "description": "Project 2 Starter",
     "main": "server.js",
     "scripts": {
-        "test": "npm run lint && cross-env NODE_ENV=test mocha --reporter spec --exit",
         "start": "node server.js",
-        "watch": "nodemon server.js", 
-        "lint": "eslint --quiet"
+        "watch": "nodemon server.js",
+        "lint": "eslint --quiet .",
+        "fix": "eslint --fix .",
+        "test": "npm run lint && cross-env NODE_ENV=test mocha --reporter spec --exit"
     },
     "keywords": [],
     "author": "",
