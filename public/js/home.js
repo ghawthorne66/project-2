@@ -3,10 +3,10 @@
 // Burger Master	cheese burger	$3.76
 // Rubios	taco	$2.00
 
-var restaurants = [
-  {
-    name: "Pizza Hut",
-    item: "pizza",
-    price: 5
-  }
-];
+// var restaurants = [
+//   {
+//     name: "Pizza Hut",
+//     item: "pizza",
+//     price: 5
+//   }
+// ];
