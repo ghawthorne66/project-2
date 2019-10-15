@@ -5,9 +5,9 @@ $(document).ready(function() {
   $("#BaseToImage").click(function() {
     //alert($("#response").val());
   });
-});
+
 //Convert Image to Base64
-$(document).ready(function() {
+
   $("#inputFileToLoad").change(function() {
     var filesSelected = document.getElementById("inputFileToLoad").files;
     if (filesSelected.length > 0) {
@@ -23,36 +23,27 @@ $(document).ready(function() {
   });
   document.getElementById("preview").setAttribute("src", $("#response").val());
   $("#preview").show();
-});
-$(document).ready(function() {
+
   // Getting references to our form and input
   var signUpForm = $("form.signup");
   var businessNameInput = $("input#buinessName-input");
-
   var locationInput = $("input#location-input");
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
       businessName: businessNameInput.val().trim(),
-      password: passwordInput.val().trim(),
-      menu: menu.val(),
+      menu: menu,
       location: locationInput.val().trim()
     };
 
-    if (
-      !userData.businessName ||
-      !userData.menu ||
-      !userData.location ||
-      !userData.lastname ||
-      !userData.username
-    ) {
+    if (!userData.businessName || !userData.menu || !userData.location) {
       return;
     }
     // If we have an email and password, run the signUpUser function
     signUpBusi(userData.businessName, userData.menu, userData.location);
     businessNameInput.val("");
-    menu.val("");
+    menu;
     locationInput.val("");
   });
 
@@ -65,7 +56,7 @@ $(document).ready(function() {
       location: location
     })
       .then(function() {
-        window.location.replace("/members");
+        window.location.replace("/business");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
