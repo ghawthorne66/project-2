@@ -25,12 +25,15 @@ require("./routes/htmlroutes.js")(app);
 require("./routes/apiroutes.js")(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
-      PORT,
-      PORT
-    );
-  });
-});
+db.sequelize
+  .sync({ force: true })
+  .then(function() {
+    app.listen(PORT, function() {
+      console.log(
+        "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+        PORT,
+        PORT
+      );
+    });
+  })
+  .catch(console.log);
