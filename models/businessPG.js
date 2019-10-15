@@ -1,7 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var businessPG = sequelize.define("businessPG", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+    businessName: DataTypes.STRING,
+    locationLat: DataTypes.STRING,
+    locationLong: DataTypes.STRING,
+    menu: DataTypes.TEXT
   });
   return businessPG;
 };
