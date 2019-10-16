@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // This sample uses the Autocomplete widget to help the user select a
 // place, then it retrieves the address components associated with that
 // place, and then it populates the form fields with those details.
@@ -7,12 +9,12 @@
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 var exampleData = [
   {
-  location: {
-    lat: 32.7341,
-    lng: -117.1446
-  },
-  name: "example"
-}
+    location: {
+      lat: 32.7341,
+      lng: -117.1446
+    },
+    name: "example"
+  }
 ];
 
 var placeSearch, autocomplete, map;
@@ -39,8 +41,7 @@ function initMap() {
     lng: -117.1611
   };
   // The map, centered at San Diego
-  map = new google.maps.Map(
-    document.getElementById("map"), {
+  map = new google.maps.Map(document.getElementById("map"), {
     zoom: 12,
     center: pos
   });
@@ -56,6 +57,43 @@ function initMap() {
   // infoWindow.open(map);
   // getNearbyPlaces(pos, "restaurants");
 }
+
+/////___________Search by City_____________////
+
+$("#search").on("click", function(event) {
+  // Clear map
+  deleteMarkers();
+
+  // Gets nearby places using the zip code the user inputted
+  var city = $("#city").val();
+  // getNearbyPlaces({}, city);
+
+  // AJAX GET request to a /api/cities route
+  $.ajax({
+    url: "/api/location/" + city,
+    method: "GET"
+  }).then(function(response){
+    // that should respond with data from the db of corresponding cities
+    console.log(response);
+    for (var i = 0; i < response.length; i++) {
+      var newMarker = {
+        location: {
+          lat: response[i].lat,
+          lng: response[i].lng,
+        },
+        name: response[i].text
+      }
+      // then we push that data into our markers array
+      markers.push(newMarker);
+    }
+    // call createDataMarkers function to display the markers on the page
+    createDataMarkers(markers);
+
+  })
+});
+
+
+
 
 // Perform a Places Nearby Search Request
 function getNearbyPlaces(position, query) {
@@ -78,7 +116,7 @@ function nearbyCallback(results, status) {
 function createDataMarkers(arr) {
   console.log("new data");
   for (var i = 0; i < arr.length; i++) {
-    console.log(arr[i])
+    console.log(arr[i]);
     marker = new google.maps.Marker({
       position: arr[i].location,
       map: map,
@@ -104,7 +142,14 @@ function createMarkers(places) {
     google.maps.event.addListener(marker, "click", () => {
       let request = {
         placeId: place.place_id,
-        fields: ["name", "formatted_address", "geometry", "rating", "website", "photos"]
+        fields: [
+          "name",
+          "formatted_address",
+          "geometry",
+          "rating",
+          "website",
+          "photos"
+        ]
       };
       service.getDetails(request, (placeResult, status) => {
         console.log("status in createMarkers: " + status);
@@ -123,9 +168,17 @@ function showDetails(placeResult, marker, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     let placeInfowindow = new google.maps.InfoWindow();
     let rating = "None";
-    if (placeResult.rating) {rating = placeResult.rating;}
-    placeInfowindow.setContent("<div><strong>" + placeResult.name +
-        "</strong><br>" + "Rating: " + rating + "</div>");
+    if (placeResult.rating) {
+      rating = placeResult.rating;
+    }
+    placeInfowindow.setContent(
+      "<div><strong>" +
+        placeResult.name +
+        "</strong><br>" +
+        "Rating: " +
+        rating +
+        "</div>"
+    );
     placeInfowindow.open(marker.map, marker);
     currentInfoWindow.close();
     currentInfoWindow = placeInfowindow;
@@ -139,7 +192,8 @@ function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
   // geographical location types.
   autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById("autocomplete"), { types: ["geocode"] }
+    document.getElementById("autocomplete"),
+    { types: ["geocode"] }
   );
 
   // Avoid paying for data that you don't need by restricting the set of
@@ -223,33 +277,21 @@ function showPanel(placeResult) {
 function geolocate() {
   console.log("geolocate found");
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition(function(position) {
       var geolocation = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      var circle = new google.maps.Circle(
-        { center: geolocation, radius: position.coords.accuracy });
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
       // autocomplete.setBounds(circle.getBounds());
     });
   }
 }
 
-/////___________Search by Zip_____________////
 
-$("#search").on("click", function (event) {
-  // Clear map 
-  deleteMarkers();
-
-  // Gets nearby places using the zip code the user inputted
-  var city = $("#city").val();
-  getNearbyPlaces({}, city);
-
-  // AJAX GET request to a /api/cities route
-  // that should respond with data from the db of corresponding cities
-  // then we push that data into our markers array
-  // call createDataMarkers function to display the markers on the page
-});
 
 function deleteMarkers() {
   for (var i = 0; i < markers.length; i++) {
