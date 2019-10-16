@@ -18,12 +18,12 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/html/login.html"));
+    res.sendFile(path.join(__dirname, "../public/html/acctUser.html"));
   });
 
   app.get("/signupBusi", function(req, res) {
     // If the user already has an account send them to the members page
-    res.sendFile(path.join(__dirname, "../public/html/signupBusi.html"));
+    res.sendFile(path.join(__dirname, "../public/html/acctBiz.html"));
   });
   app.get("/business", function(req, res) {
     // If the user already has an account send them to the members page

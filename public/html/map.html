@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>geomap</title>
+  <link rel="stylesheet" href="../css/map.css">
+​
+ <style link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+      </style> 
+​
+</head>
+<body>
+    
+​
+       <!---------- GOOGLE MAPS CODE ------------->
+    <div class="card-body">
+​
+        <!---zip code input field-->
+        <input class="form-control-default" type="text" id="city" placeholder="Enter City"></input>
+​
+        <!---zip code submit button--->
+        <button type="submit" class="btn btn-success btn-md" id="search">
+            <span aria-hidden="true"></span>Search by City
+        </button>
+        <!--Google map-->
+        <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 800px">
+​
+​
+​
+      <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 800px">
+​
+          <!-- The slide-out panel for showing place details -->
+          <div id="panel"></div>
+  
+          <!-- Map appears here -->
+          <div id="map"></div>
+      </div>
+  
+      <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+​
+      <!--50 lines snippet that enables passive event listeners by default for some events (see list below). It basically will set { passive: true } automatically every time you declare a new event listener.-->
+          <!-- <script type="text/javascript" src="node_modulesdefault-passive-events/dist/index.js"></script> -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdbgnrvZGHqZCMSROy9RbyAv09B3fZb_U&libraries=places&callback=initAutocomplete"> -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdbgnrvZGHqZCMSROy9RbyAv09B3fZb_U&libraries=places"></script>
+​
+    <script src="../js/map.js"></script>
+    
+    </html> 
+  </body> 
