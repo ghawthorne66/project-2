@@ -26,18 +26,24 @@ module.exports = function(app) {
   });
   // Route for getting some data about our user to be used client side
   app.get("/api/business_data", function(req, res) {
-    if (!req.businessPG) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        businessName: req.businessPG.businessName,
-        location: req.businessPG.location,
-        menu: req.businessPG.menu,
-        id: req.businessPG.id
+    // Otherwise send back the user's email and id
+    // Sending back a password, even a hashed password, isn't a good idea
+    db.businessPG.findAll({}).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // Get route for retrieving a single post
+  app.get("/api/business_data/:id", function(req, res) {
+    // 2. Add a join here to include the Author who wrote the Post
+    db.businessPG
+      .findOne({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
       });
-    }
   });
 };
