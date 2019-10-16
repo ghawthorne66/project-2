@@ -15,25 +15,25 @@ var exampleData = [
     name: "example"
   }
 ];
-​
+
 var placeSearch, autocomplete, map;
 var markers = [];
-​
+
 function initMap() {
   console.log("initMap()");
   if (google.maps) {
     console.log("1) Google maps has been loaded");
   }
-​
+
   if (typeof google === "object" && typeof google.maps === "object") {
     console.log("2) Google maps has been loaded");
   }
-​
+
   bounds = new google.maps.LatLngBounds();
   infoWindow = new google.maps.InfoWindow();
   currentInfoWindow = infoWindow;
   infoPane = document.getElementById("panel");
-​
+
   // The location of San Diego
   pos = {
     lat: 32.7157,
@@ -51,22 +51,22 @@ function initMap() {
   bounds.extend(pos);
   // infoWindow.setPosition(pos);
   // infoWindow.setContent('Location found.');
-​
+
   // console.log("Should be opening map: " + map);
   // infoWindow.open(map);
   // getNearbyPlaces(pos, "restaurants");
 }
-​
+
 /////___________Search by City_____________////
-​
+
 $("#search").on("click", function(event) {
   // Clear map
   deleteMarkers();
-​
+
   // Gets nearby places using the zip code the user inputted
   var city = $("#city").val();
   // getNearbyPlaces({}, city);
-​
+
   // AJAX GET request to a /api/cities route
   $.ajax({
     url: "/api/location/" + city,
@@ -87,13 +87,9 @@ $("#search").on("click", function(event) {
     }
     // call createDataMarkers function to display the markers on the page
     createDataMarkers(markers);
-​
+
   })
 });
-​
-​
-​
-​
 // Perform a Places Nearby Search Request
 function getNearbyPlaces(position, query) {
   //console.log("----------------> query: " + query);
@@ -111,7 +107,7 @@ function nearbyCallback(results, status) {
     createMarkers(results);
   }
 }
-​
+
 function createDataMarkers(arr) {
   console.log("new data");
   for (var i = 0; i < arr.length; i++) {
@@ -124,12 +120,12 @@ function createDataMarkers(arr) {
     markers.push(marker);
   }
 }
-​
+
 // Set markers at the location of each place result
 function createMarkers(places) {
   places.forEach(place => {
     // console.log("----------------------------------")
-​
+
     map.setCenter(place.geometry.location);
     let marker = new google.maps.Marker({
       position: place.geometry.location,
@@ -161,7 +157,7 @@ function createMarkers(places) {
   });
   map.fitBounds(bounds);
 }
-​
+
 // InfoWindow to display details above the marker
 function showDetails(placeResult, marker, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -186,7 +182,7 @@ function showDetails(placeResult, marker, status) {
     console.log("showDetails failed: " + status);
   }
 }
-​
+
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search predictions to
   // geographical location types.
@@ -194,26 +190,26 @@ function initAutocomplete() {
     document.getElementById("autocomplete"),
     { types: ["geocode"] }
   );
-​
+
   // Avoid paying for data that you don't need by restricting the set of
   // place fields that are returned to just the address components.
   autocomplete.setFields(["address_component"]);
-​
+
   // When the user selects an address from the drop-down, populate the
   // address fields in the form.
   autocomplete.addListener("place_changed", fillInAddress);
 }
-​
+
 function fillInAddress() {
   console.log("fillInAddress started");
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();
-​
+
   for (var component in componentForm) {
     document.getElementById(component).value = "";
     document.getElementById(component).disabled = false;
   }
-​
+
   // Get each component of the address from the place details,
   // and then fill-in the corresponding field on the form.
   for (var i = 0; i < place.address_components.length; i++) {
@@ -225,7 +221,7 @@ function fillInAddress() {
     }
   }
 }
-​
+
 function showPanel(placeResult) {
   // If infoPane is already open, close it
   if (infoPane.classList.contains("open")) {
@@ -270,7 +266,7 @@ function showPanel(placeResult) {
   // Open the infoPane
   infoPane.classList.add("open");
 }
-​
+
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {
@@ -289,15 +285,11 @@ function geolocate() {
     });
   }
 }
-​
-​
-​
 function deleteMarkers() {
   for (var i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
   }
 }
-​
 initMap();
 // initAutocomplete();
 geolocate();
