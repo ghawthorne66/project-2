@@ -1,23 +1,24 @@
 {
     "development": {
-        "username": "root",
-        "password": "password",
-        "database": "foodDB",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
+      "username": "ines7mgorl2axza3",
+      "password": "v1ibq64gxzbvoudi",
+      "database": "ucu45anquryy002n",
+      "host": "axxb6a0z2kydkco3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "dialect": "mysql"
     },
     "test": {
-        "username": "root",
-        "password": null,
-        "database": "database_test",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
+      "username": "ines7mgorl2axza3",
+      "password": "v1ibq64gxzbvoudi",
+      "database": "ucu45anquryy002n",
+      "host": "axxb6a0z2kydkco3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "dialect": "mysql"
       },
       "production": {
-        "username": "root",
-        "password": null,
-        "database": "database_production",
-        "host": "127.0.0.1",
+        "username": "ines7mgorl2axza3",
+        "password": "v1ibq64gxzbvoudi",
+        "database": "ucu45anquryy002n",
+        "host": "axxb6a0z2kydkco3.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
         "dialect": "mysql"
       }
     }
+    

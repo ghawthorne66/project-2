@@ -2,12 +2,7 @@
 var menu;
 // Convert Base64 to Image
 $(document).ready(function() {
-  $("#BaseToImage").click(function() {
-    //alert($("#response").val());
-  });
-
   //Convert Image to Base64
-
   $("#inputFileToLoad").change(function() {
     var filesSelected = document.getElementById("inputFileToLoad").files;
     if (filesSelected.length > 0) {
@@ -25,15 +20,17 @@ $(document).ready(function() {
   var signUpForm = $("form.signup");
   var businessNameInput = $("input#buinessName-input");
   var locationInput = $("input#location-input");
+
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
     event.preventDefault();
+
     var userData = {
       businessName: businessNameInput.val().trim(),
       menu: menu,
       location: locationInput.val().trim()
     };
-
+    console.log(userData);
     if (!userData.businessName || !userData.menu || !userData.location) {
       return;
     }
