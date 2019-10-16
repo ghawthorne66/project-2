@@ -14,78 +14,24 @@
     padding: 0px;
 }
 
-body {
-    background-image: url(../images/bokeh-candles-chairs-3038119.jpg);
+#signUpBusi {
+    margin-top: 30px;
+    border-radius: 8px;
+    /* opacity:0.9; */
+}
+
+#signUpUser {
+    margin-top: 30px;
+    border-radius: 8px;
+    /* opacity:0.9; */
+}
+
+#restuarant {
+    background-image: url(../images/black-bean-close-up-cooked-1640774.jpg);
     background-size: cover;
 }
 
-.picker__box {
-    background-color: rgb(235, 134, 12);
-  }
-  
-  nav ul a,
-  nav .brand-logo {
-    color: #444;
-  }
-  
-  p {
-    line-height: 2rem;
-  }
-  
-  .sidenav-trigger {
-    color: #26a69a;
-  }
-  
-  .parallax-container {
-    min-height: 380px;
-    line-height: 0;
-    height: auto;
-    color: rgba(255,255,255,.9);
-    display: flex;
-    align-items: center;;
-  }
-    .parallax-container .section {
-      width: 100%;
-    }
-  
-  @media only screen and (max-width : 992px) {
-    .parallax-container .section {
-      position: absolute;
-      top: 40%;
-    }
-    #index-banner .section {
-      top: 10%;
-    }
-  }
-  
-  @media only screen and (max-width : 600px) {
-    #index-banner .section {
-      top: 0;
-    }
-  }
-  
-  .icon-block {
-    padding: 0 15px;
-  }
-  .icon-block .material-icons {
-    font-size: inherit;
-  }
-  
-  footer.page-footer {
-    margin: 0;
-  }
-  
-  #left-form{
-    height: 419px;
-    display: flex;
-    align-items: center;
-  }
-  
-  #right-form{
-    padding: 30px 10px;
-  }
-  
-  .no-margin{
-    margin-bottom: 0 !important;
-    margin-top: 8px !important;
-  }
+#account {
+    background-image: url(../images/black-bean-close-up-cooked-1640774.jpg);
+    background-size: cover;
+}
