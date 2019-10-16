@@ -17,9 +17,9 @@
   <nav class="#212121 grey darken-4">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo white-text text-darken-2"><i class="material-icons">restaurant</i>Logo</a>
-      <ul class="right hide-on-med-and-down">
+      <ul class="right">
         <li><a href="sass.html"><i class="material-icons white-text text-darken-2">search</i></a></li>
-        <li><a href="badges.html"><i class="material-icons white-text text-darken-2">view_module</i></a></li>
+        <li><a href="signupBusi.html"><i class="material-icons white-text text-darken-2">shop</i></a></li>
         <li><a href="collapsible.html"><i class="material-icons white-text text-darken-2">refresh</i></a></li>
         <li><a href="mobile.html"><i class="material-icons white-text text-darken-2">more_vert</i></a></li>
       </ul>
@@ -27,141 +27,94 @@
   </nav>
 
   <!-- FIRST IMAGE BAR-->
-  <div id="index-banner" class="parallax-container">
+  <div id="index-banner">
     <div class="section no-pad-bot">
       <div class="container">
         <h1 class="header center grey-text text-lighten-2">Restaurant Row</h1>
       </div>
     </div>
-    <div class="parallax"><img
-        src="https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?cs=srgb&dl=bread-bun-burger-2983101.jpg&fm=jpg"
-        class="materialbox responsive-img card" alt="Unsplashed background img 1"></div>
   </div>
 
   <div class="container">
-      <div class="section">
-        <!---------- FORM ------------->
-        <div class="row">
-  
-          <div class="col s7 push-s5 #212121 grey darken-3 z-depth-5" id="right-form">
-            <div class="row">
-              <form class="col s12">
-                <div class="row">
-                  <div class="input-field col s6">
-                    <input placeholder="" id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
-                  </div>
-                  <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="password" type="password" class="validate">
-                    <label for="password">Password</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="input-field col s12">
-                    <input id="email" type="email" class="validate">
-                    <label for="email">Email</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col s12">
-                    Account Type:
-                    <div class="input-field inline">
-                      <input id="account_inline" class="no-margin" type="" class="validate">
-                      <label for="account_inline"></label>
-                      <span class="helper-text" data-error="wrong" data-success="right"></span>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-  
-  
-          </div>
-  
-          <!--GOOGLE MAP-->
-          <div class="col s5 pull-s7 left align" id="left-form"><span class="flow-text"></span>
+    <div class="section">
+      <!---------- FORM ------------->
+      <div class="row">
+
+        <div class="col s7 push-s5 #212121 grey darken-3 z-depth-5" id="right-form">
+
+        </div>
+
+        <!--GOOGLE MAP-->
+        <div class="col s5 pull-s7 left align" id="left-form"><span class="flow-text"></span>
+          <div>
             <div>
-              <input class="form-control-default" type="text" id="zipCode" placeholder="Enter Zip Code"></input>
-              <!---zip code submit button--->
-              <button type="submit" class="btn btn-success btn-md" id="search">
-                <span aria-hidden="true"></span>Search by Zip
-              </button>
-  
-              <!--Google map-->
-              <div id="map-container-google-2" class="col s5 pull-s7">
-  
-                <!-- The slide-out panel for showing place details -->
-  
-  
-                <!-- Map appears here -->
-                <div id="map"></div>
-              </div>
+              <h6>Search cities...</h6>
+            </div>
+
+            <input class="form-control-default" type="text" id="zipCode" placeholder="Enter City Name"></input>
+            <!---zip code submit button--->
+            <button type="submit" class="btn btn-success btn-md" id="search">
+              <span aria-hidden="true"></span>Search by City
+            </button>
+
+            <!--Google map-->
+            <div id="map-container-google-2" class="col s5 pull-s7">
+
+              <!-- The slide-out panel for showing place details -->
+
+
+
+              <div id="map"></div>
             </div>
           </div>
         </div>
-        <table>
-          <h6>Results</h6>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
-            </tr>
-          </thead>
-  
-          <tbody>
-            <tr>
-              <td>Pizza Hut</td>
-              <td>Pizza</td>
-              <td>$5.00</td>
-            </tr>
-            <tr>
-              <td>Burger Master</td>
-              <td>cheese burger</td>
-              <td>$3.76</td>
-            </tr>
-            <tr>
-              <td>Rubios</td>
-              <td>taco</td>
-              <td>$2.00</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
+      <table class="striped highlight">
+        <h6>Results</h6>
+        <thead class="#212121 grey darken-3">
+          <tr>
+            <th>Name</th>
+            <th>Item Name</th>
+            <th>Item Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Pizza Hut</td>
+            <td>Pizza</td>
+            <td>$5.00</td>
+          </tr>
+          <tr>
+            <td>Burger Master</td>
+            <td>cheese burger</td>
+            <td>$3.76</td>
+          </tr>
+          <tr>
+            <td>Rubios</td>
+            <td>taco</td>
+            <td>$2.00</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <!-- second image -->
-    <div class="parallax-container index-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h5 class="header col s12 dark">TEXT</h5>
-          </div>
+  </div>
+
+  <!-- last image -->
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light white-text"> Restaurant Row is a local site dedicated to restaurants.We invite restaurant owners and everyday patrons to search for restaurants in their area. Restaurants can post details about their establishment, photos, and even their menus. 
+            To get started sign up for an account and search for your restaurant on the website to see if it is listed or add your restaurant.</h5>
         </div>
       </div>
-      <div class="parallax"><img
-          src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?cs=srgb&dl=black-bean-close-up-cooked-1640774.jpg&fm=jpg"
-          class="materialbox responsive-img card" alt="Unsplashed background img 2"></div>
     </div>
-    <!-- last image -->
-    <div class="parallax-container valign-wrapper">
-      <div class="section no-pad-bot">
-        <div class="container">
-          <div class="row center">
-            <h5 class="header col s12 light">TEXT HERE</h5>
-          </div>
-        </div>
-      </div>
-      <div class="parallax"><img
-          src="https://images.pexels.com/photos/2074130/pexels-photo-2074130.jpeg?cs=srgb&dl=caffeine-cellphone-close-up-2074130.jpg&fm=jpg"
-          class="materialbox responsive-img card" alt="Unsplashed background img 2">
-      </div>
+    <div class="parallax"><img
+        src="https://images.pexels.com/photos/54455/cook-food-kitchen-eat-54455.jpeg?cs=srgb&dl=dinner-egg-flatlay-54455.jpg&fm=jpg"
+        class="materialbox responsive-img card" alt="Unsplashed background img 2">
     </div>
+  </div>
 
 
   <!--FOOTER-->
@@ -183,10 +136,10 @@
         </div>
       </div>
     </div>
-     <div class="footer-copyright">
+    <div class="footer-copyright">
       <div class="container">
       </div>
-    </div> 
+    </div>
   </footer>
 
   <!--  Scripts-->
