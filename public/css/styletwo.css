@@ -16,6 +16,14 @@
 
 #signUpBusi {
     margin-top: 30px;
+    border-radius: 8px;
+    /* opacity:0.9; */
+}
+
+#signUpUser {
+    margin-top: 30px;
+    border-radius: 8px;
+    /* opacity:0.9; */
 }
 
 #restuarant {
