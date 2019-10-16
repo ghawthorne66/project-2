@@ -21,6 +21,15 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/login.html"));
   });
 
+  app.get("/signupBusi", function(req, res) {
+    // If the user already has an account send them to the members page
+    res.sendFile(path.join(__dirname, "../public/html/signupBusi.html"));
+  });
+  app.get("/business", function(req, res) {
+    // If the user already has an account send them to the members page
+    res.sendFile(path.join(__dirname, "../public/html/restuarant.html"));
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, function(req, res) {

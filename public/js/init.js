@@ -4,3 +4,4 @@
     $(".parallax").parallax();
   });
 })(jQuery);
+
