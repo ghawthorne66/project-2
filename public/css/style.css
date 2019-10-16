@@ -16,32 +16,20 @@ p {
   color: #26a69a;
 }
 
-.parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
+#index-banner {
+  background-image: url("https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?cs=srgb&dl=bread-bun-burger-2983101.jpg&fm=jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 380px;
+  width: 100%;
   color: rgba(255,255,255,.9);
   display: flex;
-  align-items: center;;
+  align-items: center;
+  justify-content: center;
 }
   .parallax-container .section {
     width: 100%;
-  }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
 }
 
 .icon-block {
@@ -63,9 +51,35 @@ footer.page-footer {
 
 #right-form{
   padding: 30px 10px;
+  height: 450px;
 }
 
 .no-margin{
   margin-bottom: 0 !important;
   margin-top: 8px !important;
+}
+
+[type="checkbox"].filled-in.tabbed:checked:focus + label:after {
+  border-radius: 2px;
+  background-color: #ff6f00;
+  border-color: #e65100;
+}
+
+[type="checkbox"].filled-in:checked + label:after {
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff6f00;
+  background-color:  #e65100;
+  z-index: 0;
+}
+
+thead{
+  color: white;
+}
+
+.brand-logo{
+  left: 0 !important;
+  -webkit-transform: unset !important;
+  transform: unset !important;
 }
