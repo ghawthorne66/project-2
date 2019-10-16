@@ -16,13 +16,10 @@ $(document).ready(function() {
       fileReader.onload = function(fileLoadedEvent) {
         menu = fileLoadedEvent.target.result;
         console.log(menu);
-        $("#response").val(menu);
       };
       fileReader.readAsDataURL(fileToLoad);
     }
   });
-  document.getElementById("preview").setAttribute("src", $("#response").val());
-  $("#preview").show();
 
   // Getting references to our form and input
   var signUpForm = $("form.signup");
@@ -56,7 +53,7 @@ $(document).ready(function() {
       location: location
     })
       .then(function() {
-        window.location.replace("/business");
+        window.location.replace("/home");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
