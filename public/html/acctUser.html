@@ -25,44 +25,48 @@
 
     <div class="container">
       <div class="row">
-        <form class="col s6">
-          <div id="signUpBusi" class="card blue-grey darken-1 card-panel hoverable">
+        <form class="col offset-l3 s6">
+          <div id="signUpUser" class="card darken-1 card-panel hoverable">
+                <h5 class>User Sign-Up</h5>
+                <br>
             <div class="row">
               <div class="input-field col s12">
-                <input id="business_name" type="text" class="validate"/>
-                <label class="active" for="business_name">Business Name</label>
+                <input id="first-input" type="text" class="validate"/>
+                <label class="active" for="firstname">First Name</label>
               </div>
             </div>
 
             <div class="row">
-              <div class="input-field col s12">
-                <input id="location-input" type="text" class="validate" />
-                <label class="active" for="location">Business Address</label>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate" />
-                <label class="active" for="email">Email</label>
-              </div>
-            </div>
-
-            <form action="#">
-                <div class="file-field input-field col s12">
-                  <div class="btn">
-                    <span>File</span>
-                    <input type="file">
+                    <div class="input-field col s12">
+                      <input id="last-input" type="text" class="validate"/>
+                      <label class="active" for="lastname">Last Name</label>
+                    </div>
                   </div>
-                  <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                  </div>
-                </div>
 
-                <div class="container">
-                    <img id="preview" src="" class="img-responsive" style="display: none;">
-                </div>
-              </form>
+                  <div class="row">
+                        <div class="input-field col s12">
+                          <input id="email-input" type="email" class="validate" />
+                          <label class="active" for="email">Email</label>
+                        </div>
+                      </div>
+                      
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="user-input" type="text" class="validate" />
+                <label class="active" for="username">Username</label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password-input" type="password" class="validate" />
+                <label class="active" for="password">Password</label>
+              </div>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
 
             <div class="row">
               <!-- <div class="col s12">
@@ -79,42 +83,7 @@
         </form>
       </div>
 
-      <div class="row">
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1 card-panel hoverable">
-              <div class="card-content white-text">
-                <span class="card-title">Information</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup to
-                  use effectively.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1 card-panel hoverable">
-              <div class="card-content white-text">
-                <span class="card-title">Information</span>
-                <p>
-                  I am a very simple card. I am good at containing small bits of
-                  information. I am convenient because I require little markup to
-                  use effectively.
-                </p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-          
-        </div>
+      
     </div>
 
     
