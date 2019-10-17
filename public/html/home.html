@@ -10,6 +10,9 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="../css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <link href="../css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link rel="stylesheet" href="../css/map.css">
+  <style link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
+      </style> 
 </head>
 
 <body>
@@ -19,7 +22,7 @@
       <a href="#!" class="brand-logo white-text text-darken-2"><i class="material-icons">restaurant</i>Logo</a>
       <ul class="right">
         <li><a href="sass.html"><i class="material-icons white-text text-darken-2">search</i></a></li>
-        <li><a href="signupBusi.html"><i class="material-icons white-text text-darken-2">shop</i></a></li>
+        <li><a href="/signupBusi"><i class="material-icons white-text text-darken-2">shop</i></a></li>
         <li><a href="collapsible.html"><i class="material-icons white-text text-darken-2">refresh</i></a></li>
         <li><a href="mobile.html"><i class="material-icons white-text text-darken-2">more_vert</i></a></li>
       </ul>
@@ -41,7 +44,9 @@
       <div class="row">
 
         <div class="col s7 push-s5 #212121 grey darken-3 z-depth-5" id="right-form">
-
+          <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 400px">
+            <div id="map"></div>
+        </div>
         </div>
 
         <!--GOOGLE MAP-->
@@ -68,35 +73,10 @@
             </div>
           </div>
         </div>
-        <div class="col-md-12 blog-container">
+   
       </div>
       <table class="striped highlight">
-        <h6>Results</h6>
-        <thead class="#212121 grey darken-3">
-          <tr>
-            <th>Name</th>
-            <th>Item Name</th>
-            <th>Item Price</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Pizza Hut</td>
-            <td>Pizza</td>
-            <td>$5.00</td>
-          </tr>
-          <tr>
-            <td>Burger Master</td>
-            <td>cheese burger</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Rubios</td>
-            <td>taco</td>
-            <td>$2.00</td>
-          </tr>
-        </tbody>
+        <div class="col-md-12 blog-container">
       </table>
     </div>
   </div>
@@ -147,6 +127,9 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="../js/materialize.js"></script>
   <script src="../js/init.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdbgnrvZGHqZCMSROy9RbyAv09B3fZb_U&libraries=places"></script>
+  ​
+      <script src="../js/map.js"></script>
   <script>
   $(document).ready(function() {
   /* global moment */
@@ -202,12 +185,12 @@
     var newPostCardHeading = $("<div>");
     newPostCardHeading.addClass("card-header");
     var editBtn = $("<button>");
-    editBtn.text("EDIT");
+    editBtn.text("Webpage");
     editBtn.addClass("edit btn btn-info");
     var newPostTitle = $("<h2>");
     var newPostDate = $("<small>");
     var newPostAuthor = $("<h5>");
-    newPostAuthor.text("Written by: " + businessPG.businessName);
+
     newPostAuthor.css({
       float: "right",
       color: "blue",
@@ -218,7 +201,7 @@
     newPostCardBody.addClass("card-body");
     var newPostBody = $("<p>");
     newPostTitle.text(businessPG.businessName + " ");
-    newPostBody.text(businessPG.menu);
+
   
     newPostTitle.append(newPostDate);
 

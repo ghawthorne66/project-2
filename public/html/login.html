@@ -22,21 +22,19 @@
     <div class="row">
         <div class="col l4 offset-l4 m12 s12 " style="opacity:0.8;padding-top:8%;">
             <div class="card-panel z-depth-4  border-radius-6 " style="border-radius: 8px; ">
-                <form action="" method="post">
+                <form class="login">
                     <h5 class>Restaurant Row Sign In</h5>
                     <br>
                     <div class="input-field">
                         <i class="material-icons prefix">person</i>
-                        <input type="text" name="username" id="username">
+                        <input type="username" class="form-control" id="user-input" placeholder="Username">
                         <label class="active" for="username">Username</label>
                     </div>
-
-
-
                     <div class="input-field">
                     <i class="material-icons prefix">lock</i>
-                    <input type="text" name="password" id="password">
-                    <label  class="active" for="password">Password</label>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password-input" placeholder="Password">
                 </div>
             </div>
 
@@ -46,7 +44,7 @@
             <label for="checkbox">Remember Me</label><br>
             <br>
             <div class="center">
-
+           
             <button type="submit" name="login" id="" value="Login" class="btn waves-effect waves-light "
                 style="width:100%; border-radius: 25px;">Login</button>
 
@@ -54,7 +52,7 @@
 
         <br>
         <div class="">
-            <a href="register.html" class="left" style="font-size:12px;">Register Now!</a>
+            <a href="/" class="left" style="font-size:12px;">Register Now!</a>
 
         </div>
 
